@@ -1,0 +1,8 @@
+public class multiplication{
+public Static void main(String [] args){
+Scaner sc = new Scaner(System.in);
+System.out.println("Give fist number");
+int a = sc.Nextint();
+System.out.println("Give second number");
+int b = sc.Nextint();
+System.out.println(SRT."multiplication of\{a} and \{b} is \{a*b}");
