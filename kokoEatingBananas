@@ -1,0 +1,31 @@
+class Solution {
+    public static boolean ishours(int[]arr , int mid , int h){
+         long hspeed = 0 ;
+         for(int j = 0 ; j < arr.length ; j++){
+            if(arr[j] % mid == 0){
+                hspeed += arr[j] / mid ;
+            }else{
+                hspeed += (arr[j] / mid) + 1 ;
+            }
+         } 
+         return hspeed <= h ;
+    }
+    public int minEatingSpeed(int[] piles, int h) {
+        int s = 1 ;
+        int e = piles[0] ;
+       for(int i = 1 ; i < piles.length ; i++){
+        e = Math.max(e , piles[i]);
+       }
+       int ans = -1 ;
+        while(s <= e){
+            int mid = s + (e - s) / 2 ;
+             if(ishours(piles , mid , h)){
+                ans = mid ;
+                e = mid - 1 ;
+             }else{
+                s = mid + 1 ;
+             }
+        }
+        return ans ;
+    }
+} 
